@@ -23,7 +23,7 @@ public class UserMapperTest extends AbstractJUnit4SpringContextTests {
     @Test
     public void insertTest() {
         User user = new User();
-        user.setName("lianghongbin");
+        user.setUsername("lianghongbin");
         user.setPassword("123456");
 
         int result = userMapper.insert(user);
