@@ -18,6 +18,21 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
+    public int delete(int id) {
+        return userMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public User findByUsername(String username) {
+        return null;
+    }
+
+    @Override
+    public User find(int id) {
+        return null;
+    }
+
+    @Override
     public int save(User user) {
         return userMapper.insert(user);
     }

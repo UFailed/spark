@@ -20,8 +20,8 @@ public class MySqlPaginationPlugin extends PluginAdapter {
     public boolean modelExampleClassGenerated(TopLevelClass topLevelClass,
                                               IntrospectedTable introspectedTable) {
         // add field, getter, setter for limit clause
-        addLimit(topLevelClass, introspectedTable, "limitStart");
-        addLimit(topLevelClass, introspectedTable, "limitEnd");
+        addLimit(topLevelClass, introspectedTable, "limitOffset");
+        addLimit(topLevelClass, introspectedTable, "limit");
         return super.modelExampleClassGenerated(topLevelClass,
                 introspectedTable);
     }
@@ -31,10 +31,10 @@ public class MySqlPaginationPlugin extends PluginAdapter {
 //      XmlElement isParameterPresenteElemen = (XmlElement) element
 //              .getElements().get(element.getElements().size() - 1);
         XmlElement isNotNullElement = new XmlElement("if"); //$NON-NLS-1$
-        isNotNullElement.addAttribute(new Attribute("test", "limitStart != null and limitStart>=0")); //$NON-NLS-1$ //$NON-NLS-2$
+        isNotNullElement.addAttribute(new Attribute("test", "limitOffset != null and limitOffset>=0")); //$NON-NLS-1$ //$NON-NLS-2$
 //      isNotNullElement.addAttribute(new Attribute("compareValue", "0")); //$NON-NLS-1$ //$NON-NLS-2$
         isNotNullElement.addElement(new TextElement(
-                "limit #{limitStart} , #{limitEnd}"));
+                "limit #{limitOffset}, #{limit}"));
 //      isParameterPresenteElemen.addElement(isNotNullElement);
         element.addElement(isNotNullElement);
         return super.sqlMapUpdateByExampleWithoutBLOBsElementGenerated(element,

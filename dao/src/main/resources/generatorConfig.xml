@@ -8,11 +8,9 @@
     <context id="MBG" targetRuntime="MyBatis3" defaultModelType="conditional">
         <property name="xmlMerge" value="false"/>
 
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
         <plugin type="com.xxxxxbbs.plugin.pagination.MySqlPaginationPlugin"/>
-        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
-            <property name="searchString" value="Example$" />
-            <property name="replaceString" value="Criteria" />
-        </plugin>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
         <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"/>
 
         <commentGenerator>

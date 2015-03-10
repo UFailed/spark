@@ -1,22 +1,23 @@
 package com.xxxxxbbs.dao.mapper;
 
 import com.xxxxxbbs.core.model.Databasechangelog;
-import com.xxxxxbbs.core.model.DatabasechangelogCriteria;
-import java.util.List;
+import com.xxxxxbbs.core.model.DatabasechangelogExample;
 import org.apache.ibatis.annotations.Param;
 
-public interface DatabasechangelogMapper {
-    int countByExample(DatabasechangelogCriteria example);
+import java.util.List;
 
-    int deleteByExample(DatabasechangelogCriteria example);
+public interface DatabasechangelogMapper {
+    int countByExample(DatabasechangelogExample example);
+
+    int deleteByExample(DatabasechangelogExample example);
 
     int insert(Databasechangelog record);
 
     int insertSelective(Databasechangelog record);
 
-    List<Databasechangelog> selectByExample(DatabasechangelogCriteria example);
+    List<Databasechangelog> selectByExample(DatabasechangelogExample example);
 
-    int updateByExampleSelective(@Param("record") Databasechangelog record, @Param("example") DatabasechangelogCriteria example);
+    int updateByExampleSelective(@Param("record") Databasechangelog record, @Param("example") DatabasechangelogExample example);
 
-    int updateByExample(@Param("record") Databasechangelog record, @Param("example") DatabasechangelogCriteria example);
+    int updateByExample(@Param("record") Databasechangelog record, @Param("example") DatabasechangelogExample example);
 }

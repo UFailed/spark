@@ -76,7 +76,8 @@
     ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, EXECTYPE, MD5SUM, DESCRIPTION, 
     COMMENTS, TAG, LIQUIBASE
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xxxxxbbs.core.model.DatabasechangelogCriteria" >
+    <select id="selectByExample" resultMap="BaseResultMap"
+            parameterType="com.xxxxxbbs.core.model.DatabasechangelogExample">
     select
     <if test="distinct" >
       distinct
@@ -89,11 +90,11 @@
     <if test="orderByClause != null" >
       order by ${orderByClause}
     </if>
-    <if test="limitStart != null and limitStart>=0" >
-      limit #{limitStart} , #{limitEnd}
+        <if test="limitOffset != null and limitOffset>=0">
+            limit #{limitOffset}, #{limit}
     </if>
   </select>
-  <delete id="deleteByExample" parameterType="com.xxxxxbbs.core.model.DatabasechangelogCriteria" >
+    <delete id="deleteByExample" parameterType="com.xxxxxbbs.core.model.DatabasechangelogExample">
     delete from DATABASECHANGELOG
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -182,7 +183,8 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.xxxxxbbs.core.model.DatabasechangelogCriteria" resultType="java.lang.Integer" >
+    <select id="countByExample" parameterType="com.xxxxxbbs.core.model.DatabasechangelogExample"
+            resultType="java.lang.Integer">
     select count(*) from DATABASECHANGELOG
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />

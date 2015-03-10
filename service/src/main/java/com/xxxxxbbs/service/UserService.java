@@ -8,4 +8,10 @@ import com.xxxxxbbs.core.model.User;
 public interface UserService {
 
     public int save(User user);
+
+    public int delete(int id);
+
+    public User findByUsername(String username);
+
+    public User find(int id);
 }

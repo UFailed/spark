@@ -1,28 +1,29 @@
 package com.xxxxxbbs.dao.mapper;
 
 import com.xxxxxbbs.core.model.User;
-import com.xxxxxbbs.core.model.UserCriteria;
-import java.util.List;
+import com.xxxxxbbs.core.model.UserExample;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 public interface UserMapper {
-    int countByExample(UserCriteria example);
+    int countByExample(UserExample example);
 
-    int deleteByExample(UserCriteria example);
+    int deleteByExample(UserExample example);
 
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(User record);
 
     int insertSelective(User record);
 
-    List<User> selectByExample(UserCriteria example);
+    List<User> selectByExample(UserExample example);
 
-    User selectByPrimaryKey(Long id);
+    User selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") User record, @Param("example") UserCriteria example);
+    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
 
-    int updateByExample(@Param("record") User record, @Param("example") UserCriteria example);
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
 
     int updateByPrimaryKeySelective(User record);
 

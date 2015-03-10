@@ -1,14 +1,15 @@
 package com.xxxxxbbs.dao.mapper;
 
 import com.xxxxxbbs.core.model.Databasechangeloglock;
-import com.xxxxxbbs.core.model.DatabasechangeloglockCriteria;
-import java.util.List;
+import com.xxxxxbbs.core.model.DatabasechangeloglockExample;
 import org.apache.ibatis.annotations.Param;
 
-public interface DatabasechangeloglockMapper {
-    int countByExample(DatabasechangeloglockCriteria example);
+import java.util.List;
 
-    int deleteByExample(DatabasechangeloglockCriteria example);
+public interface DatabasechangeloglockMapper {
+    int countByExample(DatabasechangeloglockExample example);
+
+    int deleteByExample(DatabasechangeloglockExample example);
 
     int deleteByPrimaryKey(Integer id);
 
@@ -16,13 +17,13 @@ public interface DatabasechangeloglockMapper {
 
     int insertSelective(Databasechangeloglock record);
 
-    List<Databasechangeloglock> selectByExample(DatabasechangeloglockCriteria example);
+    List<Databasechangeloglock> selectByExample(DatabasechangeloglockExample example);
 
     Databasechangeloglock selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") Databasechangeloglock record, @Param("example") DatabasechangeloglockCriteria example);
+    int updateByExampleSelective(@Param("record") Databasechangeloglock record, @Param("example") DatabasechangeloglockExample example);
 
-    int updateByExample(@Param("record") Databasechangeloglock record, @Param("example") DatabasechangeloglockCriteria example);
+    int updateByExample(@Param("record") Databasechangeloglock record, @Param("example") DatabasechangeloglockExample example);
 
     int updateByPrimaryKeySelective(Databasechangeloglock record);
 

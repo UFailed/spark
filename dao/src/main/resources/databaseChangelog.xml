@@ -1,20 +1,145 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
 
-<databaseChangeLog
-        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
-
-    <changeSet author="lianghongbin" id="1">
-        <createTable tableName="user">
-            <column autoIncrement="true" name="id" type="BIGINT">
+    <changeSet author="lianghongbin (generated)" id="1425683173202-1">
+        <createTable tableName="hobby">
+            <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
             </column>
             <column defaultValue="" name="name" type="VARCHAR(20)">
                 <constraints nullable="false"/>
             </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="lianghongbin (generated)" id="1425683173202-2">
+        <createTable tableName="permission">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="lianghongbin (generated)" id="1425683173202-3">
+        <createTable tableName="post">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="source" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="hobby" remarks="兴趣爱好" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="click_count" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment_count" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="brief" remarks="贴子简介" type="VARCHAR(255)"/>
+            <column name="create_time" type="date"/>
+            <column name="last_modify_time" type="date"/>
+            <column defaultValueNumeric="0" name="deleted" remarks="逻辑删除标识" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="lianghongbin (generated)" id="1425683173202-4">
+        <createTable tableName="post_content">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="post_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="content" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_time" type="date"/>
+            <column defaultValueNumeric="0" name="manager" remarks="0为用户评论、1为管理员评论" type="BIT(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="top" remarks="顶的次数" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="storey" remarks="楼层" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="parent_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="lianghongbin (generated)" id="1425683173202-5">
+        <createTable tableName="post_operate">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="post_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_time" type="date"/>
+            <column name="operate" type="TEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="lianghongbin (generated)" id="1425683173202-6">
+        <createTable tableName="role">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="name" type="VARCHAR(30)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="lianghongbin (generated)" id="1425683173202-7">
+        <createTable tableName="role_permission">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="role_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="permission_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="lianghongbin (generated)" id="1425683173202-8">
+        <createTable tableName="user">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column defaultValue="" name="username" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
             <column defaultValue="" name="password" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="lianghongbin (generated)" id="1425683173202-9">
+        <createTable tableName="user_role">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role_id" type="INT">
                 <constraints nullable="false"/>
             </column>
         </createTable>
