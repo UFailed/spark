@@ -1,0 +1,582 @@
+@charset "utf-8";
+/* CSS Document */
+.user_main {
+    height: auto;
+    overflow: auto;
+    margin-top: 10px;
+}
+
+.user_main .left {
+    width: 238px;
+    border: 1px solid #ededed;
+    float: left;
+}
+
+.user_main .left .head_pic {
+    width: 188px;
+    margin: 20px auto;
+    text-align: center;
+    border-bottom: 1px solid #ededed;
+}
+
+.user_main .left .head_pic h5 {
+    font-size: 16px;
+    color: #666;
+    margin: 10px;
+}
+
+.user_main .left .head_pic img {
+    width: 100px;
+    height: 100px;
+    border: none;
+}
+
+.user_main .left .user_navigator {
+    margin: 20px auto;
+    padding: 0;
+    width: 140px;
+    position: relative;
+
+}
+
+.user_main .left .user_navigator li {
+    line-height: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.user_main .left .user_navigator li a {
+    font-size: 14px;
+    color: #666;
+    display: block
+}
+
+.user_main .left .blue_back {
+    height: 25px;
+    width: 140px;
+    position: absolute;
+    z-index: 0;
+    background: #2175d0;
+}
+
+.user_main .right {
+    width: 718px;
+    border: 1px solid #ededed;
+    padding-bottom: 20px;
+    float: left;
+    margin-left: 10px;
+    display: none;
+}
+
+/*用户中心通用右侧样式*/
+.user_main .right .user_list_top {
+    height: 54px;
+    border-bottom: 1px solid #ededed;
+}
+
+.user_main .right .user_list_top .list_tab {
+    margin: 0;
+    padding: 0;
+}
+
+.user_main .right .user_list_top .list_tab li {
+    float: left;
+    font-size: 14px;
+    margin-left: 25px;
+    margin-top: 15px;
+    width: 75px;
+    height: 29px;
+}
+
+.user_main .right .user_list_top .list_tab .list_tab_cur {
+    background: url(../images/list_tab.png) no-repeat;
+}
+
+.user_main .right .user_list_top .list_tab .list_tab_cur a {
+    color: #fff;
+}
+
+.user_main .right .user_list_top .list_tab li a {
+    display: block;
+    text-align: center;
+    color: #666;
+    line-height: 24px;
+}
+
+.user_main .right .user_list_top .search {
+    float: right;
+    margin-right: 20px;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 45px;
+    color: #999
+}
+
+.user_main .right .user_list_top .search .search_title span {
+    color: #2175d0
+}
+
+.user_main .right .user_list_top .search .search_title a {
+    color: #999;
+}
+
+.user_main .right .user_list_top .search .search_user {
+    width: 120px;
+    font-size: 12px;
+}
+
+.user_main .right .user_list_top .search .search_box {
+    width: 180px;
+    margin-left: 10px;
+}
+
+/*通用按钮样式*/
+.blue_button,
+.red_button,
+.black_button {
+    display: block;
+    width: 68px;
+    margin: 0px 0px 10px 10px;
+    line-height: 22px;
+    float: left;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+.blue_button {
+    background: #2175d0;
+    border: 1px solid #1961af;
+}
+
+.red_button {
+    background: #e76262;
+    border: 1px solid #bb3131;
+}
+
+.black_button {
+    background: #4f4f4f;
+    border: 1px solid #2e2d2d;
+}
+
+/*个人中心右侧好友设置样式*/
+.user_main .right .user_list {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.user_main .right .user_list ul,
+.user_main .right .user_list ul li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.user_main .right .user_list ul li {
+    padding: 10px 0px;
+    border-bottom: 1px dotted #ededed;
+}
+
+.user_main .right .user_list ul li dl,
+.user_main .right .user_list ul li dl dt,
+.user_main .right .user_list ul li dl dd {
+    margin: 0;
+    padding: 0;
+}
+
+.user_main .right .user_list ul li dl dt,
+.user_main .right .user_list ul li dl dd {
+    float: left;
+}
+
+.user_main .right .user_list ul li dl dt {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.user_main .right .user_list ul li dl dd {
+    color: #666;
+    font-size: 12px;
+    margin-left: 15px;
+    line-height: 22px;
+}
+
+.user_main .right .user_list ul li dl dd span {
+    color: #2175d0
+}
+
+.user_main .right .user_list ul li dl dd h5 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 10px 0px;
+}
+
+.user_main .right .user_list ul li .button_box {
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 160px;
+    height: 68px;
+}
+
+.user_main .right .user_list ul li .button_box .followed_button,
+.user_main .right .user_list ul li .button_box .following_button {
+    display: none;
+    width: 68px;
+    line-height: 22px;
+    float: left;
+    margin: 0px 0px 10px 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    border: 1px solid #bb3131;
+    background: #e76262;
+}
+
+.user_main .right .user_list ul li .button_box .following_button {
+    filter: alpha(opacity=70);
+    opacity: .7;
+}
+
+/*用户中心右侧消息设置样式===================================*/
+.user_main .right .message_list {
+    height: auto;
+    overflow: auto;
+}
+
+.user_main .right .message_list ul {
+    height: auto;
+    overflow: auto;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.user_main .right .message_list ul li {
+    height: auto;
+    overflow: auto;
+    border-bottom: 1px dotted #dfdfdf;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+}
+
+.user_main .right .message_list ul dl {
+    height: auto;
+    overflow: auto;
+    margin-left: 20px;
+}
+
+.user_main .right .message_list ul li dl dt {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    overflow: hidden;
+    float: left;
+}
+
+.user_main .right .message_list ul li dl dd {
+    float: left;
+    margin: 0;
+    width: 565px;
+    margin-left: 10px;
+}
+
+.user_main .right .message_list ul li dl dd h5 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #999;
+    margin: 0;
+    padding: 0;
+}
+
+.user_main .right .message_list ul li dl dd h5 a {
+    color: #2175d0;
+}
+
+.user_main .right .message_list ul li dl dd p {
+    margin: 0;
+    margin-top: 5px;
+}
+
+.user_main .right .message_list ul li .button_box {
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.user_main .right .message_list ul li .button_box .feedback_active {
+    background: #e76262;
+    border: 1px solid #bb3131;
+    display: none;
+}
+
+.user_main .right .message_list .user_message_textarea {
+    clear: both;
+    display: none;
+}
+
+.user_main .right .message_list .user_message_textarea .content {
+    background: #f9f9f9;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-top: 1px solid #ededed;
+    box-shadow: 0px 2px 8px 1px #ccc;
+    height: auto;
+    overflow: auto;
+}
+
+.user_main .right .message_list .user_message_textarea textarea {
+    width: 672px;
+    height: 80px;
+    border: 1px solid #d6d6d6;
+    color: #c7c7c7;
+}
+
+.message_list .arrow {
+    display: block;
+    position: absolute;
+    line-height: 14px;
+    margin-top: -15px;
+    margin-left: 575px;
+    z-index: 10001;
+}
+
+.message_list em,
+.message_list i {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 7px;
+    border-style: solid;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: top;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+.message_list em {
+    border-bottom-color: #ededed;
+}
+
+.message_list i {
+    border-bottom-color: #f9f9f9;
+    margin: 2px 0px 0px -18px;
+}
+
+.message_list ul li .original_note {
+    width: 645px;
+    margin: 20px;
+    padding: 15px;
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    color: #666;
+}
+
+.message_list ul li .original_note h5 {
+    font-weight: normal;
+    color: #999;
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.message_list ul li .original_note h5 a {
+    color: #2175d0
+}
+
+.message_list ul li .original_note p {
+    margin: 0;
+}
+
+/*用户中心右侧帖子管理样式==========================*/
+.user_main .right .user_list_top .user_note_order {
+    width: 303px;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    float: left;
+}
+
+.user_main .right .user_list_top .user_note_order li {
+    float: left;
+    text-align: center;
+    width: 100px;
+    border-left: 1px solid #ededed;
+    margin: 0;
+    padding: 0
+}
+
+.user_main .right .user_note_list {
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 678px;
+}
+
+.user_main .right .user_note_list h4 {
+    font-size: 20px;
+    color: #666;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ededed;
+}
+
+.user_main .right .user_note_list h4 .rank_click {
+    float: right;
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+.user_main .right .user_note_list h4 .rank_click span {
+    color: #2175d0;
+}
+
+.user_main .right .user_note_list p {
+    text-indent: 2em;
+    font-size: 12px;
+    line-height: 18px;
+    color: #666;
+    margin-top: 8px;
+}
+
+.user_main .right .user_note_list .pic_list {
+    width: 270px;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    overflow: auto;
+}
+
+.user_main .right .user_note_list .pic_list li {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background: #000;
+    overflow: hidden
+}
+
+.user_main .right .user_note_list .note_rank {
+    border-top: 1px solid #ededed;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    font-size: 12px;
+    color: #999
+}
+
+.user_main .right .user_note_list .note_rank a {
+    color: #2175d0;
+}
+
+.user_main .right .user_note_list .button_box {
+    float: right;
+}
+
+.user_main .right .user_note_list .button_box a {
+    color: #fff;
+}
+
+.user_main .right .user_note_list .read_detail {
+    font-size: 12px;
+    color: #2175d0;
+    float: right;
+}
+
+/*删除好友操作弹层*/
+.operate_layer {
+    position: absolute;
+    z-index: 99999;
+    opacity: 1;
+    filter: alpha(opacity=1);
+    font-size: 12px;
+    color: #666;
+    height: 118px;
+}
+
+.operate_layer .content {
+    background: #fff;
+    height: auto;
+    overflow: auto;
+    padding: 15px;
+    border-radius: 7px;
+    border: 1px solid #b9b9b9;
+    box-shadow: 0px 2px 8px 1px #ccc;
+}
+
+.operate_layer p {
+    background: url(../images/question_mark.png) no-repeat;
+    padding-left: 20px;
+    line-height: 18px;
+}
+
+.operate_layer .arrow {
+    display: block;
+    position: absolute;
+    line-height: 14px;
+    margin-top: 0px;
+    z-index: 10001;
+}
+
+.operate_layer em,
+.operate_layer i {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 7px;
+    border-style: solid;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: top;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.operate_layer em {
+    border-top-color: #b9b9b9;
+}
+
+.operate_layer i {
+    border-top-color: #fff;
+    margin: -1px 0px 0px -18px;
+}
+
+.operate_layer a {
+    display: block;
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    width: 68px;
+    line-height: 22px;
+    color: #fff;
+    text-align: center;
+}
+
+.operate_layer .ok_cancel {
+    width: 150px;
+    margin: 10px auto
+}
+
+.operate_layer .ok {
+    border-color: #1961af;
+    background: #2175d0;
+}
+
+.operate_layer .cancel {
+    border-color: #bb3131;
+    background: #e76262;
+    margin-left: 10px;
+}

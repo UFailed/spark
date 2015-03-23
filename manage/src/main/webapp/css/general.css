@@ -1,0 +1,234 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f4f4f4;
+    font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+:focus {
+    outline: none;
+}
+
+a, area {
+    blr: expression_r(this.onFocus=this.blur())
+}
+
+.clear {
+    clear: both;
+}
+
+#header {
+    background: #333438;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    z-index: 50001
+}
+
+#header .container {
+    width: 990px;
+    margin: auto;
+    padding-top: 26px;
+}
+
+#header .container .logo {
+    margin-top: 0px;
+}
+
+#header .container .login, #header .container .register {
+    float: right;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+#header .container .register {
+    background: #405060;
+    margin-left: 10px;
+}
+
+#header .container .login {
+    margin-left: 30px;
+}
+
+#header .logged {
+    float: right;
+    margin-top: 5px;
+    margin-left: 44px;
+    font-size: 12px;
+}
+
+#header .logged .letter {
+    width: 20px;
+    height: 14px;
+    display: block;
+    margin-top: 12px;
+    background: url(../images/letter.png) no-repeat -12px 0px;
+    float: right;
+}
+
+#header .logged .letter .light {
+    height: 9px;
+    width: 8px;
+    display: block;
+    position: absolute;
+    margin-left: 16px;
+    margin-top: -4px;
+    background: url(../images/letter_light.png) no-repeat;
+}
+
+#header .logged .letter_box {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background: #fff;
+    border-radius: 7px;
+    border: 1px solid #b9b9b9;
+    margin-top: 40px;
+    margin-left: -40px;
+    font-size: 12px;
+    color: #666;
+    padding: 15px 10px;
+    line-height: 20px;
+    display: none;
+    box-shadow: 0px 2px 8px 1px #ccc
+}
+
+#header .logged .letter_box span {
+    display: block;
+    z-index: 1001;
+    margin: -31px 0px 15px 30px;
+}
+
+#header .logged .letter_box em {
+    display: inline-block;
+    border: 8px solid #b9b9b9;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+#header .logged .letter_box i {
+    display: inline-block;
+    border: 7px solid #fff;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    margin-left: -15px;
+}
+
+#header .logged .letter_box a {
+    color: #e61313;
+    font-size: 10px;
+}
+
+#header .logged .user_info {
+    color: #fff;
+    float: right;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+#header .logged .user_info img {
+    width: 39px;
+    height: 39px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border: none;
+}
+
+/*统一搜索框样式*/
+.search_box {
+    height: 22px;
+    background: #fff;
+    width: 236px;
+    border: 1px solid #99999b;
+    border-radius: 11px;
+    float: right;
+    margin-top: 10px;
+}
+
+.search_box input {
+    padding: 0px;
+    height: 22px;
+    line-height: 22px;
+    border: none;
+    width: 173px;
+    font-size: 14px;
+    margin: 0px 10px;
+    float: left;
+    color: #979797
+}
+
+.search_box .zoom {
+    width: 22px;
+    height: 22px;
+    background: url(../images/zoom.png) no-repeat #fff;
+    border: none;
+}
+
+/*统一超链接按钮样式*/
+.button_blue {
+    background: #2174d0;
+    padding: 8px 25px;
+    color: #fff;
+}
+
+#main {
+    width: 970px;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+    background: #fff;
+    padding: 102px 10px 50px;
+}
+
+#main h2 {
+    font-size: 22px;
+    color: #2175d0
+}
+
+.scrollTop {
+    width: 23px;
+    padding-left: 2px;
+    height: 86px;
+    background: #2157d0 url(../images/scrollTop_ico.png) no-repeat 7px 8px;
+    position: fixed;
+    display: none;
+    bottom: 100px;
+    margin-left: 985px;
+}
+
+.scrollTop a {
+    font-size: 12px;
+    color: #fff;
+    display: block;
+    padding-bottom: 15px;
+    padding-left: 5px;
+}
+
+#footer {
+    width: 100%;
+    height: 85px;
+    background: #333438;
+}
+
+#footer .copyright {
+    width: 990px;
+    margin: auto;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}

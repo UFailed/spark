@@ -1,0 +1,26 @@
+<form><textarea>请发表评论，评论中不要带有侮辱国家，他人</textarea><input type="button" class="button_blue" id="user_message_reply_button"
+                                                      style="border:none;float:right;margin-top:5px;" value="提交回复">
+</form>
+<script>
+    $("textarea").focus(function () {
+        if ($(this).val() == "请发表评论，评论中不要带有侮辱国家，他人") {
+            $(this).val("");
+            $(this).css("color", "#666");
+        }
+    });
+    $("textarea").blur(function () {
+        if ($(this).val() == "") {
+            $(this).val("请发表评论，评论中不要带有侮辱国家，他人");
+            $(this).css("color", "#c7c7c7");
+        }
+    });
+    $("#user_message_reply_button").click(function () {
+        $(this).parents("ul").prepend("<li></li>");
+        $(this).parents(".user_message_textarea").slideUp();
+        $(".feedback").css("display", "block");
+        $(".feedback_active").css("display", "none");
+        setTimeout(function () {
+            $(".user_message_textarea .content").html("");
+        }, 500);
+    });
+</script>

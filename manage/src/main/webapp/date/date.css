@@ -1,0 +1,96 @@
+#ui-datepicker-div {
+    font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+    box-shadow: box-shadow: 10px 10px 5px #888888;
+}
+
+#ui-datepicker-div select {
+    border: none;
+    background: #fff;
+    color: #666;
+    font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 3px;
+    height: 18px;
+    padding: 0px;
+    color: #666;
+}
+
+table {
+    font-size: 12px;
+    width: 180px;
+    height: 90px;
+    border-radius: 0px 0px 7px 7px;
+    background: #fff;
+    border: 2px solid #2175d0;
+    border-top: none;
+    color: #c8c8c8
+}
+
+.ui-state-default {
+    display: block;
+    text-align: center;
+    border: 1px solid #ededed;
+    text-decoration: none;
+    color: #999;
+}
+
+.ui-datepicker-today {
+    background: #76a1dd;
+    color: #fff;
+}
+
+.ui-datepicker-today a {
+    color: #fff;
+}
+
+.ui-datepicker-header {
+    width: 176px;
+    border-radius: 7px 7px 0px 0px;
+    border: 2px solid #2175d0;
+    border-bottom: none;
+    background: #2175d0;
+    text-align: center;
+    color: #fff;
+}
+
+.ui-datepicker-title {
+    width: 150px;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+    display: none;
+}
+
+.ui-datepicker-unselectable {
+    background: #cfcfcf;
+
+}
+
+.ui-datepicker-unselectable a {
+    color: #666;
+}
+
+#to,
+#from {
+    width: 70px;
+    color: #c5c5c5;
+    border: 1px solid #999;
+    height: 16px;
+}
+
+.date_search_button {
+    font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
+    height: 20px;
+    width: 50px;
+    color: #fff;
+    background: #2175d0;
+    border: none;
+    font-size: 12px;
+}

@@ -1,0 +1,29 @@
+<!--好友操作弹出层 -->
+<div class="operate_layer">
+    <div class="content">
+        <p>确认要<span></span><span></span>?</p>
+
+        <div><a href="javascript:;" class="ok">确认</a><a href="javascript:;" class="cancel">取消</a></div>
+    </div>
+    <span class="arrow">
+      <em></em>
+      <i></i>
+    </span>
+</div>
+<script>
+    $(".operate_layer .cancel").click(function () {
+        $(".operate_layer").animate({opacity: "0"});
+    });
+    $(".operate_layer .ok").click(function () {
+        var listremove = function () {
+            $("#fans_list ul li:eq(" + liNum + ")").remove();
+        }
+        $("#fans_list ul li:eq(" + liNum + ")").slideUp();
+        var abc = $("#fans_list ul li:eq(" + liNum + ")");
+        setTimeout(function () {
+            abc.remove()
+        }, 1000);
+        $(".operate_layer").fadeOut();
+    });
+</script>
+<!--好友操作弹出层结束 -->

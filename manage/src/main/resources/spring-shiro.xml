@@ -31,10 +31,7 @@
         <property name="unauthorizedUrl" value="/login"/>
         <property name="filterChainDefinitions">
             <value>
-                /login = anon
-                /user/** = anon
-                /logout = logout
-                /** = authc
+                /** = anon
             </value>
         </property>
     </bean>

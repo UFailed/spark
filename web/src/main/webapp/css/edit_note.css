@@ -1,0 +1,199 @@
+@charset "utf-8";
+/* CSS Document */
+/*发帖标题区域*/
+.pub_title_box {
+    padding: 5px 10px;
+    height: auto;
+    overflow: auto;
+    background: #f2f5f8;
+    border: 1px solid #ededed;
+    color: #666;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 42px;
+}
+
+.pub_title_box input {
+    height: 28px;
+    border: 1px solid #999;
+    font-size: 16px;
+    color: #999;
+}
+
+.pub_title_box .title {
+    width: 448px;
+}
+
+.pub_title_box .intst {
+    width: 416px;
+    margin-top: 5px;
+}
+
+.pub_title_box .intst_input {
+    width: 408px;
+    min-height: 20px;
+    padding: 5px;
+    border: 1px solid #999;
+    float: left;
+    margin-top: 5px;
+    background: #fff;
+    cursor: text;
+    font-size: 16px;
+    font-weight: normal;
+    color: #999;
+    line-height: 18px;
+}
+
+.pub_title_box .pub_course_button {
+    display: block;
+    width: 118px;
+    line-height: 68px;
+    height: 68px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    background: #2175d0;
+    margin-top: 8px;
+    border: 1px solid #1961af;
+    text-decoration: none;
+    float: right
+}
+
+.pub_title_box .intst_list {
+    position: absolute;
+    z-index: 999;
+    margin: 5px 0px 0px 80px;
+    padding: 5px;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #999;
+    line-height: normal;
+    font-size: 12px;
+    display: none;
+}
+
+.pub_title_box .intst_list a {
+    text-decoration: none;
+}
+
+.pub_title_box .intst_list ul {
+    list-style: none;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+.pub_title_box .intst_list ul li {
+    margin: 0px 0px 5px 5px;
+    padding: 0;
+    float: left;
+}
+
+.pub_title_box .intst_list ul li a {
+    display: block;
+    background: #f0f0f0;
+    padding: 0px 5px;
+}
+
+.pub_title_box .intst_label {
+    font-size: 12px;
+    line-height: 18px;
+    display: block;
+    float: left;
+    margin-right: 2px;
+    border: 1px solid #2174d0;
+    background: #FFF;
+    padding-left: 5px;
+}
+
+.pub_title_box .intst_label a {
+    background: #2174d0;
+    color: #fff;
+    margin: 1px 1px 1px 5px;
+    display: block;
+    float: right;
+    text-decoration: none;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center
+}
+
+.pub_edit_box {
+    width: 738px;
+    padding: 10px;
+    background: #f2f5f8;
+    border: 1px solid #ededed;
+    border-bottom: none;
+    float: left;
+    margin: 10px 10px 0px 0px;
+}
+
+.pub_edit_box .img_box {
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+}
+
+.pub_edit_box .img_box img {
+    cursor: url(http://www.bdymjx.com/addtag_cur.cur), auto;
+}
+
+.pub_edit_box .label {
+    position: absolute;
+    z-index: 10002;
+    width: 110px;
+    padding: 0px 5px 0px 35px;
+    height: 36px;
+    background: url(../images/tag.png) 0px 0px;
+}
+
+.pub_edit_box .label-left {
+    position: absolute;
+    z-index: 10002;
+    width: 110px;
+    padding: 0px 35px 0px 5px;
+    height: 36px;
+    background: url(../images/tag.png) 0px -72px;
+}
+
+.pub_edit_box .label-left a {
+    display: none;
+}
+
+.pub_edit_box .label input {
+    margin-top: 8px;
+    font-size: 12px;
+    border: none;
+    color: #666;
+    width: 110px;
+    background: url(../images/alpha_bg.png);
+}
+
+.pub_edit_box .label span {
+    display: none;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.pub_edit_box .label a {
+    display: none;
+    font-family: arial;
+    color: #ccc;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pub_edit_box .label a:hover {
+    color: #2175d0;
+}
+
+.pub_content_list {
+    width: 198px;
+    float: right;
+    background: #f2f5f8;
+    border: 1px solid #ededed;
+    margin-top: 10px;
+}
