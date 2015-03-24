@@ -2,9 +2,8 @@ package com.xxxxxbbs.dao.mapper;
 
 import com.xxxxxbbs.core.model.Databasechangeloglock;
 import com.xxxxxbbs.core.model.DatabasechangeloglockExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface DatabasechangeloglockMapper {
     int countByExample(DatabasechangeloglockExample example);

@@ -21,8 +21,8 @@
             }
         });
     </script>
-    <link rel="stylesheet" href="jquery.Jcrop.min.css" type="text/css"/>
-    <link href="custom.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../../../headcutter/jquery.Jcrop.min.css" type="text/css"/>
+    <link href="../../../headcutter/custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="headpic_cutter">

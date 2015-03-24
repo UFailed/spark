@@ -126,16 +126,16 @@ public class Databasechangelog {
         }
         Databasechangelog other = (Databasechangelog) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-                && (this.getAuthor() == null ? other.getAuthor() == null : this.getAuthor().equals(other.getAuthor()))
-                && (this.getFilename() == null ? other.getFilename() == null : this.getFilename().equals(other.getFilename()))
-                && (this.getDateexecuted() == null ? other.getDateexecuted() == null : this.getDateexecuted().equals(other.getDateexecuted()))
-                && (this.getOrderexecuted() == null ? other.getOrderexecuted() == null : this.getOrderexecuted().equals(other.getOrderexecuted()))
-                && (this.getExectype() == null ? other.getExectype() == null : this.getExectype().equals(other.getExectype()))
-                && (this.getMd5sum() == null ? other.getMd5sum() == null : this.getMd5sum().equals(other.getMd5sum()))
-                && (this.getDescription() == null ? other.getDescription() == null : this.getDescription().equals(other.getDescription()))
-                && (this.getComments() == null ? other.getComments() == null : this.getComments().equals(other.getComments()))
-                && (this.getTag() == null ? other.getTag() == null : this.getTag().equals(other.getTag()))
-                && (this.getLiquibase() == null ? other.getLiquibase() == null : this.getLiquibase().equals(other.getLiquibase()));
+            && (this.getAuthor() == null ? other.getAuthor() == null : this.getAuthor().equals(other.getAuthor()))
+            && (this.getFilename() == null ? other.getFilename() == null : this.getFilename().equals(other.getFilename()))
+            && (this.getDateexecuted() == null ? other.getDateexecuted() == null : this.getDateexecuted().equals(other.getDateexecuted()))
+            && (this.getOrderexecuted() == null ? other.getOrderexecuted() == null : this.getOrderexecuted().equals(other.getOrderexecuted()))
+            && (this.getExectype() == null ? other.getExectype() == null : this.getExectype().equals(other.getExectype()))
+            && (this.getMd5sum() == null ? other.getMd5sum() == null : this.getMd5sum().equals(other.getMd5sum()))
+            && (this.getDescription() == null ? other.getDescription() == null : this.getDescription().equals(other.getDescription()))
+            && (this.getComments() == null ? other.getComments() == null : this.getComments().equals(other.getComments()))
+            && (this.getTag() == null ? other.getTag() == null : this.getTag().equals(other.getTag()))
+            && (this.getLiquibase() == null ? other.getLiquibase() == null : this.getLiquibase().equals(other.getLiquibase()));
     }
 
     @Override
