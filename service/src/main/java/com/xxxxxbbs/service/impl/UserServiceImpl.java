@@ -43,6 +43,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> findByCondition(UserExample userExample) {
+        return userMapper.selectByExample(userExample);
+    }
+
+    @Override
     public User find(int id) {
         return userMapper.selectByPrimaryKey(id);
     }

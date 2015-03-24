@@ -17,6 +17,7 @@
         <module>manage</module>
         <module>dao</module>
         <module>pagination</module>
+        <module>inner</module>
     </modules>
 
     <properties>

@@ -2,14 +2,12 @@ package com.xxxxxbbs.core.model;
 
 import java.util.Date;
 
-public class User {
+public class External {
     private Integer id;
 
-    private String username;
+    private Integer userId;
 
-    private String password;
-
-    private String phone;
+    private String url;
 
     private Date createTime;
 
@@ -21,28 +19,20 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUrl() {
+        return url;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public Date getCreateTime() {
@@ -64,11 +54,10 @@ public class User {
         if (getClass() != that.getClass()) {
             return false;
         }
-        User other = (User) that;
+        External other = (External) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
-            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
-            && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()))
+            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
+            && (this.getUrl() == null ? other.getUrl() == null : this.getUrl().equals(other.getUrl()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
     }
 
@@ -77,9 +66,8 @@ public class User {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
-        result = prime * result + ((getPhone() == null) ? 0 : getPhone().hashCode());
+        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        result = prime * result + ((getUrl() == null) ? 0 : getUrl().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         return result;
     }
@@ -91,9 +79,8 @@ public class User {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", username=").append(username);
-        sb.append(", password=").append(password);
-        sb.append(", phone=").append(phone);
+        sb.append(", userId=").append(userId);
+        sb.append(", url=").append(url);
         sb.append(", createTime=").append(createTime);
         sb.append("]");
         return sb.toString();
