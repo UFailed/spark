@@ -103,6 +103,8 @@ public class GuoduMessageSender implements MessageSender {
 
         /*使用post方式发送消息*/
         String result = this.postURL(str, url);
+
+        //TODO 解析result，根据协议判断消息是否发送成功，根据结果返回true或false
         return true;
     }
 

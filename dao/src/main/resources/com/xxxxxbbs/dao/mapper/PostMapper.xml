@@ -13,6 +13,9 @@
     <result column="last_modify_time" property="lastModifyTime" jdbcType="DATE" />
     <result column="deleted" property="deleted" jdbcType="BIT" />
   </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.xxxxxbbs.core.model.Post" extends="BaseResultMap">
+    <result column="content" property="content" jdbcType="LONGVARCHAR"/>
+  </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -75,6 +78,26 @@
     id, user_id, source, hobby, click_count, comment_count, brief, create_time, last_modify_time, 
     deleted
   </sql>
+  <sql id="Blob_Column_List">
+    content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs"
+          parameterType="com.xxxxxbbs.core.model.PostExample">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List"/>
+    ,
+    <include refid="Blob_Column_List"/>
+    from post
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause"/>
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xxxxxbbs.core.model.PostExample" >
     select
     <if test="distinct" >
@@ -92,9 +115,11 @@
       limit #{limitOffset}, #{limit}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer">
     select 
     <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List"/>
     from post
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -111,12 +136,12 @@
   <insert id="insert" parameterType="com.xxxxxbbs.core.model.Post" >
     insert into post (id, user_id, source, 
       hobby, click_count, comment_count, 
-      brief, create_time, last_modify_time, 
-      deleted)
+      brief, create_time, last_modify_time,
+    deleted, content)
     values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{source,jdbcType=INTEGER}, 
       #{hobby,jdbcType=VARCHAR}, #{clickCount,jdbcType=INTEGER}, #{commentCount,jdbcType=INTEGER}, 
-      #{brief,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{lastModifyTime,jdbcType=DATE}, 
-      #{deleted,jdbcType=BIT})
+      #{brief,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{lastModifyTime,jdbcType=DATE},
+    #{deleted,jdbcType=BIT}, #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xxxxxbbs.core.model.Post" >
     insert into post
@@ -151,6 +176,9 @@
       <if test="deleted != null" >
         deleted,
       </if>
+      <if test="content != null">
+        content,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -182,6 +210,9 @@
       </if>
       <if test="deleted != null" >
         #{deleted,jdbcType=BIT},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -224,9 +255,29 @@
       <if test="record.deleted != null" >
         deleted = #{record.deleted,jdbcType=BIT},
       </if>
+      <if test="record.content != null">
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update post
+    set id = #{record.id,jdbcType=INTEGER},
+    user_id = #{record.userId,jdbcType=INTEGER},
+    source = #{record.source,jdbcType=INTEGER},
+    hobby = #{record.hobby,jdbcType=VARCHAR},
+    click_count = #{record.clickCount,jdbcType=INTEGER},
+    comment_count = #{record.commentCount,jdbcType=INTEGER},
+    brief = #{record.brief,jdbcType=VARCHAR},
+    create_time = #{record.createTime,jdbcType=DATE},
+    last_modify_time = #{record.lastModifyTime,jdbcType=DATE},
+    deleted = #{record.deleted,jdbcType=BIT},
+    content = #{record.content,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause"/>
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
@@ -275,7 +326,24 @@
       <if test="deleted != null" >
         deleted = #{deleted,jdbcType=BIT},
       </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
     </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xxxxxbbs.core.model.Post">
+    update post
+    set user_id = #{userId,jdbcType=INTEGER},
+    source = #{source,jdbcType=INTEGER},
+    hobby = #{hobby,jdbcType=VARCHAR},
+    click_count = #{clickCount,jdbcType=INTEGER},
+    comment_count = #{commentCount,jdbcType=INTEGER},
+    brief = #{brief,jdbcType=VARCHAR},
+    create_time = #{createTime,jdbcType=DATE},
+    last_modify_time = #{lastModifyTime,jdbcType=DATE},
+    deleted = #{deleted,jdbcType=BIT},
+    content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.xxxxxbbs.core.model.Post" >

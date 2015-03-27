@@ -27,6 +27,7 @@
     <bean id="passwordHelper" class="com.xxxxxbbs.service.shiro.PasswordHelper"/>
 
     <bean id="smsService" class="com.xxxxxbbs.service.impl.SmsServiceImpl">
+        <property name="placeholder" value="亲爱的会员你好，你的验证码是{0}"/>
         <property name="codeGenerator" ref="codeGenerator"/>
         <property name="messageSenders">
             <list>

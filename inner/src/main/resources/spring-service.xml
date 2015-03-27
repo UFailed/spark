@@ -13,4 +13,29 @@
     <tx:annotation-driven/>
     <context:component-scan base-package="com.xxxxxbbs.service"/>
 
+    <bean id="guoduMessageSender" class="com.xxxxxbbs.service.sms.impl.GuoduMessageSender">
+        <property name="username" value="ceshi4"/>
+        <property name="password" value="0326cs"/>
+        <property name="appendId" value=""/>
+        <property name="contentType" value="8"/>
+        <property name="sendTime" value=""/>
+        <property name="validTime" value=""/>
+        <property name="url" value="http://221.179.180.158:9007/QxtSms/QxtFirewall"/>
+    </bean>
+    <bean id="codeGenerator" class="com.xxxxxbbs.service.sms.impl.DefaultCodeGenerator"/>
+
+    <bean id="passwordHelper" class="com.xxxxxbbs.service.shiro.PasswordHelper"/>
+
+    <bean id="marshaller" class="com.xxxxxbbs.inner.controller.SessionMarshaller"/>
+
+    <bean id="smsService" class="com.xxxxxbbs.service.impl.SmsServiceImpl">
+        <property name="marshaller" ref="marshaller"/>
+        <property name="placeholder" value="亲爱的会员你好，你的验证码是{0}"/>
+        <property name="codeGenerator" ref="codeGenerator"/>
+        <property name="messageSenders">
+            <list>
+                <ref bean="guoduMessageSender"/>
+            </list>
+        </property>
+    </bean>
 </beans>

@@ -113,4 +113,26 @@
         $.ajax(options);
         return false;
     });
+
+    $(".get_CAPTCHA").click(function () {
+
+        var options = {
+            url: '/code',
+            type: 'post',
+            dataType: 'text',
+            data: {
+                phone: $("#phone").val()
+            },
+            success: function (data) {
+                if (data == "") {
+                    alert("验证码发送成功！")
+                }
+                else {
+                    alert("验证码发送失败！")
+                }
+            }
+        };
+        $.ajax(options);
+        return false;
+    });
 </script>

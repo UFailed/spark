@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @Author lianghongbin
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({"classpath:spring-service.xml"})
+@ContextConfiguration({"classpath:spring-service.xml", "classpath:spring-dao.xml"})
 public class SmsServiceTest extends AbstractJUnit4SpringContextTests {
 
     @Autowired

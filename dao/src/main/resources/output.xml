@@ -3,7 +3,22 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
 
-    <changeSet author="lianghongbin (generated)" id="1425683173202-1">
+
+    <changeSet author="lianghongbin (generated)" id="1427421477124-1">
+        <createTable tableName="external">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="" name="url" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_time" type="date"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="lianghongbin (generated)" id="1427421477124-2">
         <createTable tableName="hobby">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
@@ -13,7 +28,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="lianghongbin (generated)" id="1425683173202-2">
+    <changeSet author="lianghongbin (generated)" id="1427421477124-3">
         <createTable tableName="permission">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
@@ -23,7 +38,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="lianghongbin (generated)" id="1425683173202-3">
+    <changeSet author="lianghongbin (generated)" id="1427421477124-4">
         <createTable tableName="post">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
@@ -49,9 +64,10 @@
             <column defaultValueNumeric="0" name="deleted" remarks="逻辑删除标识" type="BIT(1)">
                 <constraints nullable="false"/>
             </column>
+            <column name="content" remarks="贴子内容" type="TEXT"/>
         </createTable>
     </changeSet>
-    <changeSet author="lianghongbin (generated)" id="1425683173202-4">
+    <changeSet author="lianghongbin (generated)" id="1427421477124-5">
         <createTable tableName="post_content">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
@@ -80,7 +96,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="lianghongbin (generated)" id="1425683173202-5">
+    <changeSet author="lianghongbin (generated)" id="1427421477124-6">
         <createTable tableName="post_operate">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
@@ -95,7 +111,7 @@
             <column name="operate" type="TEXT"/>
         </createTable>
     </changeSet>
-    <changeSet author="lianghongbin (generated)" id="1425683173202-6">
+    <changeSet author="lianghongbin (generated)" id="1427421477124-7">
         <createTable tableName="role">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
@@ -105,7 +121,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="lianghongbin (generated)" id="1425683173202-7">
+    <changeSet author="lianghongbin (generated)" id="1427421477124-8">
         <createTable tableName="role_permission">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
@@ -118,7 +134,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="lianghongbin (generated)" id="1425683173202-8">
+    <changeSet author="lianghongbin (generated)" id="1427421477124-9">
         <createTable tableName="user">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
@@ -126,12 +142,16 @@
             <column defaultValue="" name="username" type="VARCHAR(20)">
                 <constraints nullable="false"/>
             </column>
-            <column defaultValue="" name="password" type="VARCHAR(20)">
+            <column defaultValue="" name="password" type="VARCHAR(32)">
                 <constraints nullable="false"/>
             </column>
+            <column defaultValue="" name="phone" type="VARCHAR(11)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_time" type="date"/>
         </createTable>
     </changeSet>
-    <changeSet author="lianghongbin (generated)" id="1425683173202-9">
+    <changeSet author="lianghongbin (generated)" id="1427421477124-10">
         <createTable tableName="user_role">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>

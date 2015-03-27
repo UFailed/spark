@@ -23,6 +23,8 @@ public class Post {
 
     private Boolean deleted;
 
+    private String content;
+
     public Integer getId() {
         return id;
     }
@@ -103,6 +105,14 @@ public class Post {
         this.deleted = deleted;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -124,7 +134,8 @@ public class Post {
             && (this.getBrief() == null ? other.getBrief() == null : this.getBrief().equals(other.getBrief()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getLastModifyTime() == null ? other.getLastModifyTime() == null : this.getLastModifyTime().equals(other.getLastModifyTime()))
-            && (this.getDeleted() == null ? other.getDeleted() == null : this.getDeleted().equals(other.getDeleted()));
+                && (this.getDeleted() == null ? other.getDeleted() == null : this.getDeleted().equals(other.getDeleted()))
+                && (this.getContent() == null ? other.getContent() == null : this.getContent().equals(other.getContent()));
     }
 
     @Override
@@ -141,6 +152,7 @@ public class Post {
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getLastModifyTime() == null) ? 0 : getLastModifyTime().hashCode());
         result = prime * result + ((getDeleted() == null) ? 0 : getDeleted().hashCode());
+        result = prime * result + ((getContent() == null) ? 0 : getContent().hashCode());
         return result;
     }
 
@@ -160,6 +172,7 @@ public class Post {
         sb.append(", createTime=").append(createTime);
         sb.append(", lastModifyTime=").append(lastModifyTime);
         sb.append(", deleted=").append(deleted);
+        sb.append(", content=").append(content);
         sb.append("]");
         return sb.toString();
     }
